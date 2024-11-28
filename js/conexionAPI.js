@@ -1,8 +1,10 @@
-async function listarVideos(){
-const conexion = await fetch("http://localhost:3001/videos");
+async function listarVideos() {
+    const conexion = await fetch("http://localhost:3001/videos");
+    const conexionConvertida = conexion.json();
 
-console.log(conexion);
+    return conexionConvertida
+    console.log(conexionConvertida);
 
 }
 
-listarVideos();
+export const conexionAPI ={listarVideos();}
