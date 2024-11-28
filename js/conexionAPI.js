@@ -3,8 +3,8 @@ async function listarVideos() {
     const conexionConvertida = conexion.json();
 
     return conexionConvertida
-    console.log(conexionConvertida);
+
 
 }
 
-export const conexionAPI ={listarVideos();}
+export const conexionAPI ={listarVideos}
