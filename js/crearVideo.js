@@ -1,4 +1,4 @@
-import { conexionAPI } from "./conexionAPI";
+import { conexionAPI } from "./conexionAPI.js";
 
 const formulario = document.querySelector("[data-formulario]");
 
@@ -12,10 +12,10 @@ async function crearVideo(evento) {
 
     const descripcion = Math.floor(Math.random * 10).toString();
 
-    
-await conexionAPI.enviarVideo(titulo, descripcion, url, imagen);
 
-window.location.href="..pages/videolisto.html"
+    await conexionAPI.enviarVideo(titulo, descripcion, url, imagen);
+
+    window.location.href="../pages/videolisto.html";
 }
 
 
