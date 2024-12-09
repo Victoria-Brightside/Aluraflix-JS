@@ -5,7 +5,7 @@ async function listarVideos() {
     return conexionConvertida
 }
 
-async function enviarVideo(titulo, descripcion, url,imagen) {
+async function enviarVideo(titulo, descripcion, url, imagen) {
     const conexion = await fetch("http://localhost:3001/videos", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -17,12 +17,18 @@ async function enviarVideo(titulo, descripcion, url,imagen) {
         })
     })
 
-    const conexionConvertida= conexion.json();
+    const conexionConvertida = conexion.json();
 
     return conexionConvertida;
 }
 
+async function buscarVideos(palabraClave) {
+    const conexion = await fetch(`http://localhost:3001/videos?q=${palabraClave}`);
+    const conexionConvertida = conexion.json();
+    return conexionConvertida
+}
+
 
 export const conexionAPI = {
-    listarVideos, enviarVideo
+    listarVideos, enviarVideo, buscarVideos
 }
